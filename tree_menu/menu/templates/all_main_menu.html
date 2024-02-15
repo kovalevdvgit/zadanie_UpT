@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  {% load filetags%}
+  <head>
+    <meta charset="UTF-8">
+    <title>Главные меню</title>
+  </head>
+  <body>
+    <h1>All main menu</h1>
+    {% for object in object_list%}
+    {% draw_menu object.name%}
+    {%endfor%}
+    <!--
+    {% for object in object_list%}
+    <h2>{{object}}</h2>
+
+    {% for m_lv2 in object.menu_lv2_set.all %}
+    <h3>{{m_lv2}}</h3>
+    {% endfor %}
+
+    {% endfor %}
+    -->
+  </body>
+</html>

@@ -1,0 +1,16 @@
+
+{% if menu %}
+<h2>=======================================================</h2>
+<h2><a href="{% url 'main_menu' pk=menu.pk%}">{{menu}}</a></h2>
+{% endif %}
+{% if menu.menu_lv2_set.all %}
+    {%for menu_lv2 in menu.menu_lv2_set.all%}
+    <h3>|</h3>
+    <h3>---><a href="{% url 'menu_lv2' pk=menu_lv2.pk%}">{{menu_lv2}}</a></h3>
+    {%endfor%}
+{% endif %}
+<h2>=======================================================</h2>
+
+
+
+

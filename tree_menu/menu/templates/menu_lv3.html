@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h2><a href="{% url 'main_menu' pk=object.parent_menu.parent_menu.pk%}">{{object.parent_menu.parent_menu}}</a></h2>
+    <h2>|</h2>
+    <h2> ---><a href="{% url 'menu_lv2' pk=object.parent_menu.pk%}">{{object.parent_menu}}</a></h2>
+    <h2>|</h2>
+    <h1>------>{{object}}*</h1>
+    <h2><a href="{% url 'all_main_menu'%}">all main menu</a></h2>
+  </body>
+</html>

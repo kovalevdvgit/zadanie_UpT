@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Главные меню</title>
+  </head>
+  <body>
+    <h2><a href="{% url 'main_menu' pk=object.parent_menu.pk%}">{{object.parent_menu}}</a></h2>
+    <h2>|</h2>
+    <h1> --->   {{object}}*</h1>
+    {% if object.menu_lv3_set.all %}
+    {%for menu_lv3 in object.menu_lv3_set.all%}
+    <h2>|</h2>
+    <h2>---------><a href="{% url 'menu_lv3' pk=menu_lv3.pk%}">{{menu_lv3}}</a></h2>
+    {%endfor%}
+    {% endif %}
+    <h2><a href="{% url 'all_main_menu'%}">all main menu</a></h2>
+  </body>
+</html>
